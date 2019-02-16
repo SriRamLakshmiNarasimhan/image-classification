@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		</head>
+		<body  style="background-color:powderblue;">
+			<h1>Displays predicted character from any of '&#x0B85;', '&#x0B86;', '&#x0B89;' and '&#x0B8A;'</h1>
+			<div>
+				<input type="button" id="button" value="click to display prediction" />
+			</div>
+		</br>
+		<div style="font-size:40px;">
+			<span>predicted character: </span>
+			<span id="prediction" style="font-size:50px;">-<span>
+			</div><div style="font-size:40px;">
+					<span>probability: </span>
+					<span id="probability" style="font-size:50px;">-</span>
+				</div>
+			</body>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+			<script>
+    $(document).ready(function() {
+        $("#button").click(function() {
+            var letter = 'character';
+            var probability = 'NaN';
+            $.ajax({
+                url: "http://localhost/output.txt",
+                success: function(data) {
+                    const allLines = data.split(/\r\n|\n/);
+                    allLines.forEach((line) => {
+                        if (line.length > 1 && !line.startsWith("#")) {
+                            if (line.startsWith("&")) {
+                                letter = line;
+
+                            } else {
+                                probability = parseFloat(line).toFixed(2) + "%";
+                            }
+                        }
+                    });
+
+                    $('#prediction').html(letter);
+                    $('#probability').html(probability);
+                }
+            });
+        });
+    });
+</script>
+		</html>
