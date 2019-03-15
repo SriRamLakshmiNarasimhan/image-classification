@@ -15,4 +15,4 @@ function [a1 z1 a2 z2 a3 z3 a4] = computeForwardPropogation(X, theta1, theta2, t
 	z3 = theta3*a3;
 	a4 = sigmoid(z3);
 	
-	end
+	endfunction

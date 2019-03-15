@@ -5,4 +5,4 @@ function predictTrainingSetAccuracy(X, y, theta1, theta2, theta3, m)
 	trainingSetAccuracy = mean(double(index'==y))*100;
 	fprintf("\nTraining set accuracy is %f%%\n", trainingSetAccuracy);
 	
-	end
+	endfunction

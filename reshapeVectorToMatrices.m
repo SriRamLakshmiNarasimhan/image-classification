@@ -9,4 +9,4 @@ function [theta1 theta2 theta3] = reshapeVectorToMatrices(vector, inputLayerSize
 	theta2 = reshape(vector((1 + theta1size): (theta1size + theta2size)), hiddenLayer2Size, (hiddenLayer1Size + 1));	
 	theta3 = reshape(vector((1 + theta1size + theta2size): end), outputLayerSize, (hiddenLayer2Size + 1));
 	
-	end
+	endfunction

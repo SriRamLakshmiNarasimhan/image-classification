@@ -10,4 +10,4 @@ function imVectorForm = convertImageToVector(imageFilePath)
 		imVectorForm = im2double(rgb2gray(image))(:);
 		end;
 	
-	end
+	endfunction

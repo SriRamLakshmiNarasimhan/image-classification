@@ -18,4 +18,5 @@ function predict(imageFilePath, map, theta1, theta2, theta3)
 % modify path and save result in a file
 % index.html file can show unicode characters if path is set
 	save "C:/path/output.txt" output;
-	end
+	
+	endfunction
