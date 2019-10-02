@@ -39,6 +39,5 @@ options = optimset('GradObj', 'on', 'MaxIter', 200);
 
 predictTrainingSetAccuracy(X, y, theta1, theta2, theta3, m);
 
-
 fprintf("\n\nNeural network has been trained.\nTo predict, load image and execute predict(imageFilePath, map, theta1, theta2, theta3) in command line.\n");
 fprintf('\n******************************************************************************************************\n');
